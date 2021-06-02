@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static'style.css' %}" />
+    <link rel="stylesheet" href="{% static'styles.css' %}" />
+  </head>
+  <body>
+    <header id="header" class="fixed-top" style="top: 0px">
+      <div class="container d-flex align-items-center">
+        <a href="{% url 'home' %}"><img class="Logo" src="Logo.png" /></a>
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'about' %}">ABOUT US</a></li>
+            <li><a href="{% url 'services' %}">OUR SERVICES</a></li>
+            <li><a href="{% url 'hours' %}">HOURS</a></li>
+            <li><a href="{% url 'gallery' %}">GALLERY</a></li>
+            <li><a href="{% url 'booking' %}">BOOKING</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+            <li>
+              <a
+                href="https://m.facebook.com/magminohautestudio/"
+                class="facebook"
+                ><i class="bx bxl-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/magminohautestudio?igshid=3bwofbybtq3w"
+                class="instagram"
+                ><i class="bx bxl-instagram"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="body-content">
+      {% block content %}{% endblock %}
+      <hr />
+      <footer><p>© 2020</p></footer>
+    </div>
+  </body>
+</html>
